@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>StockVibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="site-wrapper">
+
+<header class="vs-premium-header">
+  <div class="vs-glass-effect"></div>
+  
+  <div class="header-main-grid">
+    
+    <div class="info-block left">
+      <div class="status-line">
+        <span class="blink-dot"></span>
+        <span class="label">STATUS: AUTHENTIC SOURCED</span>
+      </div>
+      <p class="desc">Materiale premium. Design limitat. Cultură stradală definită.</p>
+    </div>
+
+    <div class="brand-core">
+      <div class="brand-row">
+        <button id="category-toggle" class="hamburger" aria-expanded="false" aria-controls="category-panel" title="Categorii">
+          <span class="hamb-line"></span>
+          <span class="hamb-line"></span>
+          <span class="hamb-line"></span>
+        </button>
+        <h1 class="vibe-logo">
+          <span class="text-green">VIBE</span>
+          <div class="lightning-container">
+            <span class="bolt">⚡</span>
+          </div>
+          <span class="text-white">STOCK</span>
+        </h1>
+      </div>
+      <div id="category-panel" class="category-panel" aria-hidden="true"></div>
+      <div class="brand-footer">
+        <span class="serial">SNKR // CLTH — 2026</span>
+      </div>
+    </div>
+
+    <div class="info-block right">
+      <div class="logistics">
+        <span class="label">WORLDWIDE SHIPPING</span>
+        <span class="value">ACTIVE</span>
+      </div>
+      
+      <button class="cart-premium" id="cart-btn">
+        <div class="cart-meta">
+          <span class="cart-title">BAG</span>
+          <span id="cart-count">0</span>
+        </div>
+        <div class="cart-icon-wrapper">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <div id="product-grid" class="grid"></div>
+</main>
+
+<!-- 🔥 SCRIPTURI LA FINAL (IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="app.js"></script>
+
+<!-- 🔥 MODAL PRODUS -->
+<div id="product-modal" class="modal" style="display:none;">
+  <div class="modal-content">
+
+    <span class="modal-close">&times;</span>
+
+    <div class="modal-body">
+
+      <div class="modal-gallery">
+        <div id="modal-thumbs"></div>
+        <img id="modal-main-img" src="" alt="">
+      </div>
+
+      <div class="modal-info">
+        <h3 id="modal-name"></h3>
+
+        <p id="modal-desc"></p>
+
+        <div class="modal-meta-row">
+          <p id="modal-stock" class="meta-item"></p>
+          <div class="meta-right">
+            <div id="modal-sizes" class="sizes"></div>
+            <p id="modal-price" class="meta-item"></p>
+          </div>
+        </div>
+
+        <div class="modal-action-row">
+          <div id="modal-btn-container"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- 🔥 MODAL COȘ -->
+<div id="cart-modal" class="modal" style="display:none;">
+  <div class="modal-content" style="max-width:500px; position:relative;">
+
+    <!-- 🔥 BUTON X -->
+    <span class="cart-close">&times;</span>
+
+    <h2>Coșul tău</h2>
+
+    <ul id="cart-list" style="margin-top:15px;"></ul>
+
+    <button id="send-order" class="btn" style="margin-top:20px; width:100%;">
+      Trimite Comanda pe WhatsApp
+    </button>
+  </div>
+</div>
+
+</div>
+<!-- Notifications container -->
+<div id="notifications" aria-live="polite" class="notifications"></div>
+</body>
+</html>

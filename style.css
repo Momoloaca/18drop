@@ -1,0 +1,965 @@
+:root {
+  --bg: #1e1f23;
+  --card: #2a2b31;
+  --accent: #24b1c3;
+  --muted: #bdbdbd;
+  --btn-bg: var(--accent);
+  --btn-color: #000;
+  --btn-hover: #1d98a8;
+}
+
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', Inter, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #eaeaea;
+  overflow-x: hidden;
+}
+
+/* Fashion site polish: subtle gradient, improved typography */
+body {
+  background: linear-gradient(180deg, #141417 0%, var(--bg) 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global transitions */
+* { transition: background .18s ease, color .18s ease, transform .18s ease; }
+
+/* Accent utilities */
+.accent-gradient {
+  background: linear-gradient(90deg, #24a9c3 0%, #6fe0d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;700&display=swap');
+
+/* Configurație Culori */
+:root {
+  --vibe-green: #00ab4d; /* Verdele premium solicitat */
+  --pure-white: #ffffff;
+  --obsidian-black: #080808;
+}
+
+.vs-premium-header {
+  background: var(--obsidian-black);
+  min-height: 120px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  overflow: hidden;
+  /* Relief subtil prin umbră adâncă */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.95);
+}
+
+/* Efect de textură premium (Grid de fundal) */
+.vs-glass-effect {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.header-main-grid {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* BRANDING CENTRAL */
+.brand-core {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.vibe-logo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.text-green { color: var(--vibe-green); }
+.text-white { color: var(--pure-white); }
+
+.lightning-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bolt {
+  font-size: 40px;
+  color: var(--pure-white);
+  /* Efect electric pur, fără aură verde */
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+  animation: electric-flicker 3s infinite;
+}
+
+.brand-footer {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* BLOCURI INFORMATIVE */
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-block.right { align-items: flex-end; }
+
+.label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+.desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #888;
+  max-width: 240px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* CART PREMIUM (STIL TECHWEAR) */
+.cart-premium {
+  background: #111;
+  border: 1px solid #222;
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-top: 5px;
+}
+
+.cart-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cart-title {
+  font-size: 9px;
+  font-weight: 900;
+  color: #444;
+}
+
+#cart-count {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--pure-white);
+}
+
+.cart-icon-wrapper {
+  background: var(--vibe-green);
+  color: #000;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.cart-premium:hover {
+  border-color: var(--vibe-green);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 171, 68, 0.2);
+}
+
+.cart-premium:hover .cart-icon-wrapper {
+  background: var(--pure-white);
+}
+
+/* ANIMAȚII */
+.blink-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--vibe-green);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: pulse-green 1.5s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes electric-flicker {
+  0%, 10%, 12%, 20%, 22%, 55%, 57%, 100% { opacity: 1; transform: scale(1); }
+  11%, 21%, 56% { opacity: 0.4; transform: scale(0.95); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .info-block.left, .brand-footer { display: none; }
+  .header-main-grid { grid-template-columns: 1fr 1fr; }
+  .vibe-logo { font-size: 32px; }
+  .vs-premium-header { padding: 0 20px; min-height: 90px; }
+}
+
+@media (max-width: 600px) {
+  .logistics { display: none; }
+  .vibe-logo { font-size: 24px; gap: 8px; }
+  .bolt { font-size: 24px; }
+  .cart-premium { padding: 5px 5px 5px 12px; }
+}
+/* --- CONFIGURARE VARIABILE CYBER-LUXURY --- */
+:root {
+  --accent: #1880b4;       /* Verdele VIBE STOCK */
+  --card: #0c0c0c;         /* Negru Obsidian pentru card */
+  --card-border: #1a1a1a;  /* Bordură subtilă */
+  --text-dim: #888;
+  --bg-dark: #050505;
+}
+
+/* GRID - Ultra Wide & Clean */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1800px;
+  margin: auto;
+  background: var(--bg-dark);
+}
+
+/* CARD - Design "Industrial Plate" */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 0px; /* Colțuri drepte pentru look premium/fashion */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: card-reveal .5s forwards ease-out;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 
+              0 0 15px rgba(0, 171, 68, 0.1);
+}
+
+@keyframes card-reveal { 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+/* CARD IMAGE - Focus pe Produs */
+.card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 0px;
+  background: #000;
+  filter: grayscale(20%); /* Look fashion discret */
+  transition: transform .6s cubic-bezier(.2,.9,.2,1), filter .6s;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+
+/* BADGE - Tip "Authenticity Tag" */
+.badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: var(--accent);
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  padding: 5px 12px;
+  font-size: 10px;
+  z-index: 10;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Formă asimetrică tech */
+}
+
+/* TEXT - Typography Premium */
+.name {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 5px 0 0 0;
+  color: #545252;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* PRICE & SIZES */
+.card-price-size-row {
+  display: flex;
+  flex-direction: row; /* desktop: sizes and price on one line */
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.price {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #b5b5b5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price::before {
+  content: '';
+  width: 12px;
+  height: 2px;
+  background: var(--accent); /* Linie verde în loc de simbol valută plictisitor */
+}
+
+.sizes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.size {
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid #222;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.size:hover {
+  border-color: #555;
+  color: #fff;
+}
+
+.size.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* BUTTON - CTA Techwear */
+.btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 0px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: 'ADD TO BAG'; /* Text custom */
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform .3s;
+}
+
+.btn:hover::before {
+  transform: translateY(0);
+}
+
+/* Visual feedback la adăugare */
+.btn.added {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+}
+
+/* Hover special pentru card selected */
+.card.selected {
+  border-color: var(--accent);
+  background: #0f0f0f;
+}
+
+.card.selected::before {
+  content: 'SELECTED';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 8px;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 28px;
+}
+.modal.show { display:flex; animation: modal-pop .22s ease; }
+@keyframes modal-pop { from { opacity:0; transform: translateY(6px) scale(.995);} to { opacity:1; transform: translateY(0) scale(1);} }
+.modal-content {
+  background: #1e1f23;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.modal-close {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Close button for cart modal (apply on desktop and mobile) */
+.cart-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .2s;
+  z-index: 99999;
+}
+
+.cart-close:hover {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
+/* GALLERY */
+.modal-gallery {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+#modal-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#modal-thumbs img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: .2s;
+}
+#modal-thumbs img.active {
+  border-color: var(--accent);
+}
+
+/* MAIN IMAGE */
+#modal-main-img {
+  width: 100%;
+  height: 520px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#modal-main-img { box-shadow: 0 12px 36px rgba(0,0,0,0.45); }
+
+/* MODAL INFO */
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 0 16px;
+}
+#modal-name { letter-spacing: .2px; }
+#modal-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+#modal-desc {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.35;
+  margin: 2px 0 6px;
+  max-width: 90%;
+}
+
+/* subtle divider */
+.modal-meta-row { border-top: 1px solid rgba(255,255,255,0.03); padding-top:10px; }
+
+/* PRICE + SIZES (MODAL) */
+.modal-price-size-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  margin: 10px 0;
+}
+#modal-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+#modal-sizes {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* META ROW: stock, sizes, price on one line */
+.modal-meta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 8px 0 12px 0;
+}
+.modal-meta-row .meta-item {
+  margin: 0;
+  color: #ddd;
+  font-size: 14px;
+}
+.modal-meta-row #modal-stock { color: #ccc; }
+.modal-meta-row #modal-price { color: var(--accent); font-weight: 700; }
+
+.modal-meta-row #modal-sizes { display:flex; gap:8px; flex-wrap:wrap; }
+.modal-meta-row .meta-right { display:flex; gap:12px; align-items:center; }
+
+/* ACTION ROW */
+.modal-action-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+}
+.modal-action-row .btn {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px;
+}
+
+/* SMALL SCREENS */
+@media (max-width: 420px) {
+  .size { padding: 10px 14px; font-size: 14px; }
+  .btn { padding: 14px 18px; font-size: 15px; }
+  header h1 { font-size: 28px; }
+  .header-inner { padding-right: 72px; }
+}
+
+/* MOBILE GLOBAL */
+@media (max-width: 768px) {
+
+  /* price + sizes stacked */
+  .card-price-size-row,
+  .modal-price-size-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+
+  /* Samsung S24 Ultra – ecrane mari, foarte înalte */
+@media (max-width: 500px) and (min-height: 800px) {
+
+  /* CARD – margini subțiri + formă foarte verticală */
+  .card {
+    padding: 6px;              /* margini ultra-subțiri */
+    border-radius: 12px;
+    min-height: 620px;         /* card mult mai vertical */
+    gap: 6px;
+  }
+
+  /* IMAGINE – foarte înaltă, ocupă 70–75% din card */
+  .card img {
+    height: 480px;             /* perfect pentru S24 Ultra */
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  /* TEXT – puțin mai compact */
+  .card .name {
+    font-size: 16px;
+  }
+
+  .card-price-size-row {
+    gap: 6px;
+  }
+}
+
+
+/* MOBILE — sub 480px */
+@media (max-width: 480px) {
+
+  .sizes {
+    gap: 4px;
+  }
+
+  /* stack sizes and price on small screens */
+  .card-price-size-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .size {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.22);
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    gap: 6px;
+  }
+
+  .btn.added {
+    transform: scale(1.02);
+    box-shadow: 0 4px 14px rgba(46,204,113,0.22);
+  }
+}
+
+
+  /* CART CLOSE BUTTON */
+  .cart-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
+    z-index: 99999;
+  }
+  .cart-close:hover {
+    color: var(--accent);
+    transform: scale(1.15);
+  }
+
+/* Cart list thumbnails */
+#cart-list { list-style: none; padding: 0; margin: 0; }
+#cart-list li { margin-bottom: 8px; }
+.cart-thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .cart-thumb { width: 44px; height: 44px; border-radius: 6px; }
+}
+
+  /* GRID MOBILE */
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  /* CARD MOBILE */
+  .card {
+    min-height: auto;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .card img {
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .card .name,
+  .card h3 { font-size: 16px; }
+
+  .card-price-size-row { gap: 8px; }
+  .card .price { font-size: 18px; }
+
+  /* MODAL MOBILE */
+  .modal-content {
+    width: 98%;
+    max-width: 980px;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .modal { padding: 12px; backdrop-filter: blur(6px); }
+
+  /* GALLERY MOBILE */
+  .modal-gallery {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  #modal-thumbs {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px;
+    width: 100%;
+  }
+
+  #modal-thumbs img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+  }
+
+  #modal-main-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  /* Position close button inline with thumbnail row on small screens */
+  .modal-content { position: relative; }
+  .modal-close {
+    position: absolute;
+    right: 10px;
+    top: 8px; /* corner of modal */
+    z-index: 60;
+    font-size: 28px;
+    background: rgba(255,255,255,0.03);
+    padding: 6px 8px;
+    border-radius: 6px;
+    line-height: 1;
+  }
+
+  /* MODAL INFO */
+  .modal-info {
+    align-items: stretch;
+    text-align: left;
+    gap: 8px;
+    padding: 6px 8px 80px 8px;
+  }
+
+  #modal-name,
+  #modal-price { font-size: 18px; }
+
+  #modal-desc {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.25;
+    max-height: 3.75em;
+    overflow: hidden;
+  }
+
+  .modal-meta-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .modal-meta-row .meta-item { font-size: 13px; }
+
+  /* STICKY ACTION ROW */
+  .modal-action-row {
+    position: sticky;
+    bottom: 10px;
+    background: linear-gradient(180deg, rgba(30,31,35,0) 0%, rgba(30,31,35,0.95) 80%);
+    width: calc(100% - 16px);
+    margin: 0 auto;
+    padding: 10px 8px 12px 8px;
+    border-radius: 10px;
+    z-index: 20;
+    gap: 8px;
+  }
+
+  .modal-action-row .btn { width: 100%; }
+}
+
+/* CARD HOVER EFFECT */
+.card, .card::after {
+  transition: transform .22s cubic-bezier(.2,.9,.2,1),
+              box-shadow .22s ease,
+              filter .22s ease,
+              opacity .18s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 22px 50px rgba(0,0,0,0.52) !important;
+  filter: saturate(1.06) brightness(1.02);
+}
+
+.card:hover::after,
+.card:focus-within::after {
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+}
+
+/* NOTIFICATIONS */
+.notifications {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100000;
+  pointer-events: none;
+}
+
+.notification {
+  pointer-events: auto;
+  min-width: 240px;
+  max-width: 360px;
+  background: #222;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  font-weight: 600;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: notif-in .28s forwards;
+}
+
+.notification.success { background: #2ecc71; color: #000; }
+.notification.error { background: #ff6b6b; color: #000; }
+
+@keyframes notif-in {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Stronger override to remove bullets/markers inside the cart modal */
+.modal-content #cart-list,
+.modal-content #cart-list li {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.modal-content #cart-list li::marker {
+  display: none !important;
+}
+
+/* Ensure the cart list uses full width with no default indentation */
+.modal-content #cart-list { width: 100%; }
+
+/* HAMBURGER (left of logo) + LEFT SLIDING CATEGORY PANEL */
+.brand-row { display:flex; align-items:center; gap:12px; }
+.hamburger {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+  border:0;
+  background:transparent;
+  padding:6px 8px;
+  cursor:pointer;
+  align-items:center;
+}
+.hamb-line { width:22px; height:2px; background:#fff; display:block; border-radius:2px; }
+.category-panel {
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:300px;
+  max-width:80%;
+  background:#0f0f10;
+  transform:translateX(-100%);
+  transition: transform .32s cubic-bezier(.2,.9,.2,1);
+  z-index:16000;
+  padding:18px 12px;
+  box-shadow:4px 0 30px rgba(0,0,0,0.6);
+}
+.category-panel.open { transform: translateX(0); }
+.category-panel .panel-header { display:flex; justify-content:space-between; align-items:center; color:#fff; font-weight:900; margin-bottom:10px; }
+.category-panel .cat-list { display:flex; flex-direction:column; gap:8px; }
+.cat-btn { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:8px; background:transparent; color:#ddd; border:0; cursor:pointer; font-weight:700; }
+.cat-btn:hover { background: rgba(255,255,255,0.03); color:#fff; }
+.cat-btn.active { background: var(--accent); color:#000; }
+.cat-count { background: rgba(255,255,255,0.06); color:#fff; padding:4px 8px; border-radius:999px; font-weight:800; }
+.cat-close { background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer; }
+
+@media (min-width: 1100px) {
+  .brand-core { align-items:center; }
+  .brand-core .brand-footer { margin-top:0; }
+}
