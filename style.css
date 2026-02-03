@@ -408,7 +408,7 @@ body {
 }
 
 .btn::before {
-  content: 'ADD TO BAG'; /* Text custom */
+  content: 'Adauga in cos'; /* Text custom */
   position: absolute;
   inset: 0;
   background: var(--accent);
@@ -716,12 +716,15 @@ body {
 #cart-list { list-style: none; padding: 0; margin: 0; }
 #cart-list li { margin-bottom: 8px; }
 .cart-thumb {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
   border-radius: 8px;
   background: #000;
   flex-shrink: 0;
+  display: block;
 }
 
 @media (max-width: 480px) {
@@ -917,6 +920,18 @@ body {
 }
 .modal-content #cart-list li::marker {
   display: none !important;
+}
+
+/* Ensure cart thumbnails are constrained even if other img rules apply */
+.modal-content #cart-list .cart-thumb,
+#cart-list .cart-thumb {
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  display: block !important;
 }
 
 /* Ensure the cart list uses full width with no default indentation */
