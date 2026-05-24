@@ -66,9 +66,19 @@
   </div>
 </header>
 
-<main>
-  <div id="product-grid" class="grid"></div>
-</main>
+  <main>
+    <!-- Product carousel (standalone) -->
+    <section id="product-carousel" class="product-carousel" aria-label="Carousel Produse">
+      <button class="carousel-nav carousel-prev" aria-label="Previous">‹</button>
+      <div class="carousel-track" role="list"></div>
+      <button class="carousel-nav carousel-next" aria-label="Next">›</button>
+    </section>
+
+    <!-- Product module: reusable container for product cards. Can be copied to other pages. -->
+    <section class="product-module" data-module="products" aria-label="Produse">
+      <div id="product-grid" class="grid"></div>
+    </section>
+  </main>
 
 <!-- 🔥 SCRIPTURI LA FINAL (IMPORTANT) -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
