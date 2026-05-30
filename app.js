@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const produse = results.data.map(p => {
 
         const poze = Object.keys(p)
-          .filter(key => key.toLowerCase().includes("poza"))
+          .filter(key => /^poz/i.test(key))
           .flatMap(key => p[key] ? p[key].split(/[;,]/) : [])
           .map(url => url.trim())
           .filter(url => url.length > 5);
@@ -735,9 +735,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollStep = () => Math.round(itemWidth() + gap());
 
     function alignToMiddleSet() {
-      if (source.length <= 1) return;
-      const width = setWidth();
-      if (width) track.scrollLeft = width;
+      if (source.length <= 1) {
+        track.scrollLeft = 0;
+        return;
+      }
+      const middleCard = track.children[source.length];
+      if (!middleCard) {
+        track.scrollLeft = 0;
+        return;
+      }
+      const cardWidth = middleCard.getBoundingClientRect().width;
+      const trackPaddingLeft = parseInt(window.getComputedStyle(track).paddingLeft || 0);
+      const shouldLeftAlign = track.clientWidth <= cardWidth * 2.2;
+      track.scrollLeft = shouldLeftAlign
+        ? Math.max(0, middleCard.offsetLeft - trackPaddingLeft)
+        : Math.max(0, middleCard.offsetLeft - ((track.clientWidth - cardWidth) / 2));
     }
 
     function normalizeLoop() {
@@ -1035,14 +1047,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function alignToMiddleSet() {
-      if (currentSource.length <= 1) return;
-      const middleCard = track.children[currentSource.length];
-      if (middleCard) {
-        track.scrollLeft = middleCard.offsetLeft - ((track.clientWidth - middleCard.getBoundingClientRect().width) / 2);
+      if (currentSource.length <= 1) {
+        track.scrollLeft = 0;
         return;
       }
-      const width = setWidth();
-      if (width) track.scrollLeft = width;
+      const middleCard = track.children[currentSource.length];
+      if (!middleCard) {
+        track.scrollLeft = 0;
+        return;
+      }
+      const cardWidth = middleCard.getBoundingClientRect().width;
+      const trackPaddingLeft = parseInt(window.getComputedStyle(track).paddingLeft || 0);
+      const shouldLeftAlign = track.clientWidth <= cardWidth * 2.2;
+      track.scrollLeft = shouldLeftAlign
+        ? Math.max(0, middleCard.offsetLeft - trackPaddingLeft)
+        : Math.max(0, middleCard.offsetLeft - ((track.clientWidth - cardWidth) / 2));
     }
 
     function normalizeLoop() {
